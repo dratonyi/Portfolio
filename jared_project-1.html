@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>High-Frequency Trading Project</title>
+    <meta name="description" content="Case study page of High-Frequency Trading Project" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/Jared.png"
+              alt="Ram Maheshwari Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Jared King</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#projects" class="header__link"> Projects </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#projects"> Projects </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">High-Frequency Trading Project</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary">
+            Exploring the impact of public sentiment on stock prices and the effectiveness of mathematical models in high-frequency trading.
+          </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="#" class="btn btn--bg" target="_blank">Live Link (coming soon)</a>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="https://github.com/JaredjKing/HFTComparisonApp" class="btn btn--bg" target="_blank">Comparison Code Link</a>
+        </div>
+        <div class="grid-container">
+          <div class="project-cs-hero__cta">
+            <a href="https://github.com/JaredjKing/SentimentHighFrequencyTrading" class="btn btn--bg" target="_blank">Sentiment Code Link</a>
+          </div>
+          <div class="project-cs-hero__cta">
+            <a href="https://github.com/JaredjKing/LSTMHighFrequencyTrading" class="btn btn--bg" target="_blank">ML Code Link</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Project Overview</h3>
+              <p class="project-details__desc-para">
+                I have always been curious about how much public opinion sways stock prices in comparison to the popular modern mathematical models accuracy.
+                This project is my attempt to see the differences between the 2, and also get some exposure to one of the more popular trading techniques; high frequency trading. There are 3 main components
+                to this project; sentiment based HFT, Mathematical HFT (long short term memory ML model), and a comparison between the 3. 
+              </p>
+              <h3 class="project-details__content-title">Sentiment Based HFT</h3>
+              <img
+              src="./assets/png/SMLDiagram.png"
+              style="width: 100%; height: auto; display: block;"
+              >
+              <p class="project-details__desc-para">
+                This is the first part of the project in where I will use pre-trained models through PyTorch to get sentiment score values. In my early testing I noticed that 
+                some of the more finacially literate models would strugle on sentances like "the market is looking poor" where more diverse models would struggle on sentances like 
+                "the market is quite bearish". This led me to the decision to use a handful of models where some are more general sentiment models and others are trained more on financial 
+                phrases. 
+              </p>
+              <p class="project-details__desc-para">
+                For efficience, I also decided to run the models on separate threads such that not as much time would be wasted in calculations. For this, no mutexes were needed as all of the 
+                functions used were atomic as noted in the Python documentation. The general flow of this sub-project is as follows: collect data, clean data, run models on data, fit the data to a [-1,1] range,
+                and then average the values together based on their respective weights. You can see this is the "main.py" file of the Sentiment Code Link above. This program is then ran itteratively where it will 
+                make many small simulated purchases to mimic a HFT algorithm.
+
+                <strong>This part is nearly complete.</strong>
+              </p>
+              <h3 class="project-details__content-title">Machine Learning (Mathematical) Based HFT</h3>
+              <p class="project-details__desc-para">
+                This is phase 2 of the project where I will be using a popular machine learning algorithm called "Long Short Term Memory" to predict stock prices given 
+                a stock ticker. Although pre-trained models for this are readily accessible, I will be training my own model for this sub-project. 
+              </p>
+              <p class="project-details__desc-para">
+                So what is a LSTM model? A Long Short-Term Memory (LSTM) model is a type of recurrent neural network (RNN) designed to handle sequential data and capture
+                 long-term dependencies. Traditional RNNs struggle with "vanishing gradients," where they fail to retain information over long sequences. LSTMs solve this
+                  by using special memory cells.
+              </p>
+              <p class="project-details__desc-para">
+                Each LSTM cell contains three gates:
+              </p class="project-details__desc-para">
+              <img
+                src="./assets/jpeg/LSTMDiagram.jpeg"
+                style="width: 100%; height: auto; display: block;"
+              />
+              <ul class="project-details__desc-para">
+                <li><strong>Forget gate:</strong> Decides what information to discard from the cell state.</li>
+                <li><strong>Input gate:</strong> Determines what new information to add.</li>
+                <li><strong>Output gate:</strong> Chooses what information to output based on the current cell state.</li>
+              </ul>
+              <p class="project-details__desc-para">
+                  The cell state, which flows through the network with minimal modifications, allows LSTMs to preserve information over longer sequences. 
+                  At each time step, the gates control the flow of information, allowing the network to learn which parts of the sequence are important to remember or forget.
+              </p>
+              <p class="project-details__desc-para">
+                  LSTMs are widely used for tasks like time-series prediction, natural language processing, and speech recognition because they excel at learning patterns in sequential data, 
+                  where context from earlier inputs can be crucial to make accurate predictions. Making it a perfect tool to make predictions for the stock market, where each stock can easily 
+                  be viewed as a time-series. This model will then be ran interatively to make purchasing decisions as an HFT.
+                  
+                  <strong>This part of the project is about to begin</strong>
+              </p>
+              <h3 class="project-details__content-title">Comparison</h3>
+              <p class="project-details__desc-para">
+                This part of the project will be a static webapp that will be hosted on Github Pages just like this website that will routinely run the prediction models over time 
+                and compare their respective scores. This project will have an indepth analysis of the differences between the two and will show their previous scores as well as their average
+                returns. <strong>This part of the project has not begun yet</strong>
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">Python</div>
+                <div class="skills__skill">Pandas</div>
+                <div class="skills__skill">NumPy</div>
+                <div class="skills__skill">scikit-learn</div>
+                <div class="skills__skill">Matplotlib</div>
+                <div class="skills__skill">PyTorch</div>
+                <div class="skills__skill">TensorFlow</div>
+                <div class="skills__skill">Beautiful Soup</div>
+                <div class="skills__skill">Flask</div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/twitter-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/yt-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="#">
+                <img
+                  class="main-footer__icon main-footer__icon--mr-none"
+                  src="./assets/png/insta-ico.png"
+                  alt="icon"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Jared King</h4>
+            <p class="main-footer__short-desc">
+              Thank you for taking the time to look through my Portfolio!
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
+            >Ram Maheshwari</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>

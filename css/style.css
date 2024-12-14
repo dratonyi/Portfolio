@@ -66,7 +66,8 @@ textarea {
   font-size: 6rem;
   text-transform: uppercase;
   letter-spacing: 3px;
-  text-align: center; }
+  text-align: center;
+  top: 0; }
   @media only screen and (max-width: 37.5em) {
     .heading-primary {
       font-size: 4.5rem; } }
@@ -171,7 +172,7 @@ textarea {
       padding: 8rem 0; } }
 
 .text-primary {
-  color: #fff;
+  color: #727272;
   font-size: 2.2rem;
   text-align: center;
   width: 100%;
@@ -184,9 +185,11 @@ textarea {
   display: none; }
 
 .home-hero {
-  color: #fff;
-  background: linear-gradient(to right, rgba(0, 98, 185, 0.8), rgba(0, 98, 185, 0.8)), url(../../assets/svg/common-bg.svg);
+  color: #727272;
+  background: url(../../assets/jpeg/pexels-olly-764450.jpg);
+  background-size: 100% auto;
   background-position: center;
+  background-repeat: no-repeat;
   height: 100vh;
   min-height: 80rem;
   max-height: 120rem;
@@ -244,7 +247,8 @@ textarea {
     max-width: 80rem; }
   .home-hero__cta {
     margin-top: 5rem;
-    text-align: center; }
+    text-align: center; 
+}
 
 .about {
   background: #fafafa; }
@@ -497,8 +501,8 @@ textarea {
   position: fixed;
   width: 100%;
   z-index: 1000;
-  background: #000;
-  background: #fff;
+  background: #ffffff;
+  background: #727272;
   box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); }
   .header__content {
     display: flex;
@@ -512,10 +516,10 @@ textarea {
     display: flex;
     align-items: center;
     cursor: pointer;
-    color: #333;
+    color: #ffffff;
     transition: color .3s; }
     .header__logo-container:hover {
-      color: #0062b9; }
+      color: #ffffff; }
   .header__logo-img-cont {
     width: 5rem;
     height: 5rem;
@@ -548,13 +552,13 @@ textarea {
     padding: 2.2rem 3rem;
     display: inline-block;
     font-size: 1.6rem;
-    color: #333;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
     transition: color .3s; }
     .header__link:hover {
-      color: #0062b9; }
+      color: #3ba0f8; }
     @media only screen and (max-width: 56.25em) {
       .header__link {
         padding: 3rem 1.8rem;
